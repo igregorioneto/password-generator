@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 50px;
   width: 100%;
-  border: 1px solid #fff;
   margin-top: 15px;
 
-  padding: 10px;
+  padding: 20px;
 
   background: ${props => props.theme.palette.primary.main};
 
