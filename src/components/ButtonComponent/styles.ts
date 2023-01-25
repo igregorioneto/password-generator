@@ -7,5 +7,11 @@ export const Container = styled.div`
 
     color: ${props => props.theme.palette.secondary.main};
     border-color: ${props => props.theme.palette.secondary.main};
+
+    &:hover {
+      background: ${props => props.theme.palette.secondary.main};
+      color: ${props => props.theme.palette.common.black};
+      border-color: ${props => props.theme.palette.secondary.main};
+    }
   }
 `;
