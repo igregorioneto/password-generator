@@ -1,11 +1,8 @@
-import { Button } from "@mui/material";
 import { Container } from "./styles";
-import { Box } from "@mui/system";
-
-import SendIcon from '@mui/icons-material/Send';
 import SliderComponent from "../SliderComponent";
 import CheckboxComponent from "../CheckboxComponent";
 import StrengthPassword from "../StrengthPassword";
+import ButtonComponent from "../ButtonComponent";
 
 const GeneratorForm = () => {
   return(
@@ -25,11 +22,7 @@ const GeneratorForm = () => {
           strengthValue={3}
         />
 
-        <Box>
-          <Button variant="outlined" endIcon={<SendIcon />}>
-            Generate
-          </Button>
-        </Box>  
+        <ButtonComponent />
       </form>
     </Container>
   );
