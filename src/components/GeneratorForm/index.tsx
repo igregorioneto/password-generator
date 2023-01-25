@@ -4,6 +4,7 @@ import { Box } from "@mui/system";
 import StarIcon from '@mui/icons-material/Star';
 import SendIcon from '@mui/icons-material/Send';
 import SliderComponent from "../SliderComponent";
+import CheckboxComponent from "../CheckboxComponent";
 
 const labels: { [index: string]: string } = {
   1: 'Useless+',
@@ -25,24 +26,8 @@ const GeneratorForm = () => {
           defaultValue={10}
         />
 
-        <FormGroup>
-          <FormControlLabel 
-            control={<Checkbox defaultChecked />} 
-            label="Include Uppercase Letters" 
-          />
-          <FormControlLabel 
-            control={<Checkbox defaultChecked />} 
-            label="Include Lowercase Letters" 
-          />
-          <FormControlLabel 
-            control={<Checkbox defaultChecked />} 
-            label="Include Numbers" 
-          />
-          <FormControlLabel 
-            control={<Checkbox defaultChecked />} 
-            label="Include Symbols" 
-          />
-        </FormGroup>  
+        <CheckboxComponent 
+        />  
 
         <div className="strength">
           <span>Strength</span>
