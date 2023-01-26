@@ -1,13 +1,12 @@
 import { Box, Rating } from "@mui/material";
 import { Container } from "./styles";
 import StarIcon from '@mui/icons-material/Star';
-import { SyntheticEvent, useState } from "react";
 
 const labels: { [index: string]: string } = {
-  1: 'Useless+',
-  2: 'Poor+',
-  3: 'Good',
-  4: 'Excellent',
+  1: 'LOW',
+  2: 'MEDIUM',
+  3: 'STRONG',
+  4: 'VERY STRONG',
 };
 
 interface IStrengthPassword {

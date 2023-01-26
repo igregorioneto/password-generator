@@ -30,6 +30,8 @@ export const passwordGeneratorSlice = createSlice({
       let uppercaseChars = "ABCDEFGHIJLMNOPQRSTUVWXYZ";
       let lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
 
+      const strongPassword = [uppercase, lowercase, numbers, symbols];
+
       let password = "";
 
       for (let i = 0; i < Number(slider); i++) {
@@ -53,8 +55,16 @@ export const passwordGeneratorSlice = createSlice({
           password += symbolsChars.substring(randomChar, randomChar + 1);
         }
       }
-
-      console.log(password);
+      
+      let count = 1;
+      for (let i = 0; i < strongPassword.length; i++) {
+        if(strongPassword[i]) {
+          if((count === 1 || count === 2) || Number(slider) <= 5) state.strengthValue = 1;
+          if(count === 2 && Number(slider) <= 8 && Number(slider) > 5) state.strengthValue = 2;
+          if(count === 3 && Number(slider) <= 10) state.strengthValue = 3;
+          if(count === 4 && Number(slider) > 10) state.strengthValue = 4;
+        }
+      }
       
     }
   }
