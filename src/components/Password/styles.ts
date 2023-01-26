@@ -26,4 +26,8 @@ export const Container = styled.div`
       color: ${props => props.theme.palette.secondary.contrastText};
     }
   }
+
+  .not-password {
+    color: #686868;
+  }
 `;
