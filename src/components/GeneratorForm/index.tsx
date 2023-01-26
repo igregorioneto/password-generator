@@ -3,9 +3,15 @@ import SliderComponent from "../SliderComponent";
 import CheckboxComponent from "../CheckboxComponent";
 import StrengthPassword from "../StrengthPassword";
 import ButtonComponent from "../ButtonComponent";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { useDispatch } from "react-redux";
+import { generatePassword } from "../../features/PasswordGenerator/password-generator-slice";
 
 const GeneratorForm = () => {
+  const passwordGenerator = useAppSelector((state) => state.passwordGenerator);
+  const dispatch = useDispatch();
+
   const [slider, setSlider] = useState<number | number[]>(10);
 
   const [checkedUppercase, setCheckedUppercase] = useState<boolean>(false);
@@ -13,14 +19,12 @@ const GeneratorForm = () => {
   const [checkedNumbers, setCheckedNumbers] = useState<boolean>(false);
   const [checkedSymbols, setCheckedSymbols] = useState<boolean>(false);
 
+  useEffect(() => {
+    console.log(passwordGenerator.lowercase);
+  }, [passwordGenerator])
+
   const handleSubmitForm = () => {
-    console.log({
-      slider: slider, 
-      uppercase: checkedUppercase, 
-      lowercase: checkedLowercase, 
-      numbers: checkedNumbers, 
-      symbols: checkedSymbols
-    });
+    dispatch(generatePassword());
   }
 
   const handleSliderComponent = (value: number | number[]) => {
