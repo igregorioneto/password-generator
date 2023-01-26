@@ -5,9 +5,14 @@ import StrengthPassword from "../StrengthPassword";
 import ButtonComponent from "../ButtonComponent";
 
 const GeneratorForm = () => {
+
+  const handleSubmitForm = () => {
+    console.log('enviou');
+  }
+
   return(
     <Container>
-      <form >
+      <form>
         <SliderComponent 
           label="Character Length"
           max={20}
@@ -22,7 +27,9 @@ const GeneratorForm = () => {
           strengthValue={3}
         />
 
-        <ButtonComponent />
+        <ButtonComponent 
+          onSubmitButton={handleSubmitForm}
+        />
       </form>
     </Container>
   );
