@@ -23,7 +23,12 @@ export const Container = styled.div`
 
   button {
     svg {
-      color: ${props => props.theme.palette.secondary.contrastText};
+      color: ${props => props.theme.palette.secondary.main};
+    }
+    &:hover {
+      svg {
+        color: ${props => props.theme.palette.secondary.contrastText};
+      }
     }
   }
 

@@ -3,10 +3,11 @@ import { Container } from "./styles";
 import StarIcon from '@mui/icons-material/Star';
 
 const labels: { [index: string]: string } = {
+  0: '',
   1: 'LOW',
   2: 'MEDIUM',
   3: 'STRONG',
-  4: 'VERY STRONG',
+  4: 'HARD',
 };
 
 interface IStrengthPassword {
