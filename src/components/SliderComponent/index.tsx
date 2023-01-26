@@ -7,15 +7,16 @@ interface ISlider {
   max: number,
   min: number,
   defaultValue: number,
+  onSliderComponent: (value: number | number[]) => void,
+  slider: number | number[]
 }
 
 const SliderComponent = (
-  {label, max, min, defaultValue}: ISlider
+  {label, max, min, defaultValue, onSliderComponent, slider}: ISlider
 ) => {
-  const [slider, setSlider] = useState<number | number[]>(defaultValue);
-
   const handleSlider = (event: Event, newValue: number | number[]) => {
-    setSlider(newValue);
+    if(onSliderComponent) onSliderComponent(newValue);
+    
   }
 
   return(

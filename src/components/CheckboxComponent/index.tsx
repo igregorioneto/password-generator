@@ -2,47 +2,46 @@ import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import { Container } from "./styles";
 import { ChangeEvent, useState } from 'react';
 
-interface ICheckboxValues {
-  uppercase: boolean;
-  lowercase: boolean;
-  numbers: boolean;
-  symbols: boolean;
+interface ICheckbox {
+  onCheckboxComponent: (key: string, value: boolean) => void;
+  valueUppercase: boolean;
+  valueLowercase: boolean;
+  valueNumbers: boolean;
+  valueSymbols: boolean;
 }
 
-const CheckboxComponent = () => {
-
-  const [checkedUppercase, setCheckedUppercase] = useState<boolean>(false);
-  const [checkedLowercase, setCheckedLowercase] = useState<boolean>(false);
-  const [checkedLumbers, setCheckedNumbers] = useState<boolean>(false);
-  const [checkedLymbols, setCheckedSymbols] = useState<boolean>(false);
-
+const CheckboxComponent = ({
+  onCheckboxComponent,
+  valueUppercase,
+  valueLowercase,
+  valueNumbers,
+  valueSymbols
+}: ICheckbox) => {
+  
   const handleChecked = (event: ChangeEvent<HTMLInputElement>, checked: boolean) => {
-    if(event.target.id === 'uppercase') setCheckedUppercase(value => !value);
-    if(event.target.id === 'lowercase') setCheckedLowercase(value => !value);
-    if(event.target.id === 'numbers') setCheckedNumbers(value => !value);
-    if(event.target.id === 'symbols') setCheckedSymbols(value => !value);
+    if(onCheckboxComponent) onCheckboxComponent(event.target.id,checked);
   }
 
   return(
     <Container>
       <FormGroup>
           <FormControlLabel 
-            control={<Checkbox value={checkedUppercase} id="uppercase" onChange={handleChecked}/>} 
+            control={<Checkbox value={valueUppercase} id="uppercase" onChange={handleChecked}/>} 
             label="Include Uppercase Letters" 
             className="checkbox"
           />
           <FormControlLabel 
-            control={<Checkbox value={checkedLowercase} id="lowercase" onChange={handleChecked}/>} 
+            control={<Checkbox value={valueLowercase} id="lowercase" onChange={handleChecked}/>} 
             label="Include Lowercase Letters" 
             className="checkbox"
           />
           <FormControlLabel 
-            control={<Checkbox value={checkedLumbers} id="numbers" onChange={handleChecked}/>} 
+            control={<Checkbox value={valueNumbers} id="numbers" onChange={handleChecked}/>} 
             label="Include Numbers" 
             className="checkbox"
           />
           <FormControlLabel 
-            control={<Checkbox value={checkedLymbols} id="symbols" onChange={handleChecked}/>} 
+            control={<Checkbox value={valueSymbols} id="symbols" onChange={handleChecked}/>} 
             label="Include Symbols" 
             className="checkbox"
           />

@@ -9,13 +9,17 @@ interface IButtonComponent {
 const ButtonComponent = ({ onSubmitButton }: IButtonComponent) => {
 
   const handleSubmit = () => {
-    onSubmitButton();
+    if(onSubmitButton) onSubmitButton();
   }
 
   return(
     <Container>
       <Box>
-        <Button onClick={handleSubmit} variant="outlined" endIcon={<SendIcon />}>
+        <Button 
+          onClick={handleSubmit} 
+          variant="outlined" 
+          endIcon={<SendIcon />}
+        >
           Generate
         </Button>
       </Box>  
