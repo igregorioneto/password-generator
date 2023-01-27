@@ -23,12 +23,12 @@
 <img src="https://img.shields.io/static/v1?label=PasswordGenerator&message=Greg%C3%B3rioNeto&color=7159c1&style=for-the-badge&logo=ghost">
 
 <h1 align="center">
-  <img alt="PasswordGenerator" title="#PasswordGenerator" src="https://github.com/igregorioneto/hero-election/blob/main/public/heros-election.gif?raw=true" />
+  <img alt="PasswordGenerator" title="#PasswordGenerator" src="https://github.com/igregorioneto/password-generator/blob/main/public/password-generator.gif?raw=true" />
 </h1>
 
 <h1 align="center">
   <h2>Tela sugestão do UI</h2>
-  <img alt="UI" title="#UI" src="https://raw.githubusercontent.com/igregorioneto/hero-election/main/public/tela-ui-hero-election.png" />
+  <img alt="UI" title="#UI" src="https://github.com/igregorioneto/password-generator/blob/main/public/ui-desafio-password-generator.jpg?raw=true" />
 </h1>
 
 <p align="center">
